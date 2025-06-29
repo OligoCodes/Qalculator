@@ -1,0 +1,165 @@
+:root{
+    --base0: #FF9494 ;
+    --base1: linear-gradient( lightblue, lightcyan) ;
+    --base2: linear-gradient( navy, teal) ;
+    --base3: whitesmoke;
+    --base4: #31267D;
+    --base5: #BFBFBF;
+    --base6: #FFFFFF ;
+    --base7: #D6ACFF;
+    --base8: #006FFF;
+    --base9: #343434;
+    --base10: #FF0000;
+    --base11: linear-gradient(#16FF01, #4EFF80);
+    --base12: 0px 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.darkMode{
+    --base0: #FF0000 ;
+    --base1: linear-gradient( navy, teal);
+    --base2: linear-gradient( navy, teal) ;
+    --base3: #606060;
+    --base4: #3B3AFF;
+    --base5: #DFDFDF;
+    --base6: #000000 ;
+    --base7: #43C1D0;
+    --base8: #2D16FF;
+    --base9: #E4E4E5;
+    --base10: #FFCBCB ;
+    --base11: linear-gradient(#26DD0B, #0BDD7F);
+    --base12: 0px 2px 20px rgba(255, 255, 255, 1)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Montserrat;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--base1);
+}
+
+.center{
+    width: 340px;
+    background: var(--base3);
+    border-radius: 21px;
+    border: solid 1px var(--base5);
+    box-shadow: var(--base12);
+}
+
+input[type = "text"]{
+    height: 100px;
+    width: 290px;
+    margin-top: 20px;
+    border-radius: 9px;
+    border: none;
+    color: var(--base4);
+    background: var(--base5) ;
+    font-size: 33px;
+    font-weight: bolder;
+    text-align: right;
+    padding-right: 20px;
+}
+
+#dot{
+    color: var(--base6);
+}
+
+form .buttons{
+    width: 300px;
+    margin: 10px 25px 0 21px;
+    padding: 10px 0 30px 0;
+    
+}
+
+input[type = "button"]{
+    width: 58px;
+    height: 55px;
+    margin: 5px;
+    font-size: 21px;
+    line-height: 55px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background: var(--base9);
+}
+
+input[type = "button"]:hover{
+    scale: 1.1;
+    transition: 0.2s all ease;
+}
+
+
+input[class="numbers"]{
+    color: var(--base6);
+}
+
+input[class="operations"]{
+    color: var(--base4);
+    background: var(--base7) ;
+}
+
+input[class="special"],[id="clear"]{
+    color: var(--base8);
+}
+
+input[id="cancel"]{
+    color: var(--base10);
+    background: var(--base0) ;
+}
+
+input[id="equal"]{
+    color: var(--base10);
+    background: var(--base11) ;
+}
+
+.button{
+    display: flex;
+}
+
+
+#theme-switch{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient( var(--base8), var(--base7));
+    top: 10px;
+    right: 20px;
+    
+}
+
+#theme-switch :last-child{
+    display: none;
+}
+
+.darkMode #theme-switch :first-child{
+    display: none;
+}
+
+.darkMode #theme-switch :last-child {
+    display: block;
+    animation: turn 1.2s 1;
+}
+
+@keyframes turn{
+    0%{
+        transform: rotateZ(-180deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
